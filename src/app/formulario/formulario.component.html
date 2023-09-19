@@ -1,1 +1,31 @@
-<p>formulario works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <form [formGroup]="grupoFormulario" (ngSubmit)="funcionEnviar()">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                    <input type="text" class="form-control" formControlName="nombre">
+                    <div class="text-danger" *ngIf="grupoFormulario.get('nombre')?.hasError('required')">
+                        El nombre es obligatorio.
+                    </div>
+                </div>
+            
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                    <input type="email" class="form-control" formControlName="email">
+                    <div class="text-danger" *ngIf="grupoFormulario.get('email')?.hasError('required')">
+                        El correo electrónico es requerido.
+                    </div>
+                    <div class="text-danger" *ngIf="grupoFormulario.get('email')?.hasError('email')">
+                        Correo electrónico no válido. Ej: mail@micorreo.com
+                    </div>
+                </div>
+            
+                <div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
