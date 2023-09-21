@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Tabla Reactiva con Bootstrap</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{item.id}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
